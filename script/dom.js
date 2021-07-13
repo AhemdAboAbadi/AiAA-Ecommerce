@@ -49,6 +49,7 @@ function sellerProductGrid(item) {
   productEdit.classList = "product-edit";
   productRemove.classList = "product-remove";
 
+
   // Append child to parents
   sellerProduct.appendChild(sellerProductImage);
   sellerProductDetails.appendChild(sellerProductEditRemove);
@@ -69,13 +70,10 @@ function sellerProductGrid(item) {
   sellerProductPrice.textContent = item.price;
   sellerProductDesc.textContent = item.description;
   sellerProductImg.setAttribute("src", item.imgUrl);
+  productRemove.setAttribute("id", item.id)
 
-  // Remove product with remove button
-  productRemove.addEventListener("click", (e) => {
-    // console.dir(e.target.parentNode.parentNode.parentNode.id);
-    const itemId = e.target.parentNode.parentNode.parentNode.id
-    removeItem("products", itemId)
-  })
+
+  productRemove.addEventListener("click", removeSelectedItem)
 
 
   return sellerProduct;
@@ -108,3 +106,10 @@ function createSellerPage() {
 }
 
 
+// Remove product with remove button
+function removeSelectedItem(e) {
+  e.target.parentElement.parentElement.parentElement.remove();
+  const itemId = e.target.parentNode.parentNode.parentNode.id;
+
+  removeItem("products", itemId)
+}
