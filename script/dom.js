@@ -51,7 +51,7 @@ function sellerProductGrid(item) {
 
   // Append child to parents
   sellerProduct.appendChild(sellerProductImage);
-  sellerProduct.appendChild(sellerProductEditRemove);
+  sellerProductDetails.appendChild(sellerProductEditRemove);
   sellerProductEditRemove.appendChild(productEdit);
   sellerProductEditRemove.appendChild(productRemove);
   sellerProductImage.appendChild(sellerProductImg);
@@ -96,44 +96,7 @@ function createSellerPage() {
   // while (mainContent.firstChild) {
   //   mainContent.removeChild(mainContent.lastChild);
   // }
-  const sellerProduct = createProductGrid([
-    {
-      id: 0,
-      name: "iPad",
-      price: 1000,
-      category: "Tech",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis odio animi a, illum sapiente magnam? Incidunt quisquam illo provident, sunt labore nemo sit non cupiditate consequuntur, optio debitis tempore et.",
-      imgUrl: "https://www.notebookcheck.net/uploads/tx_nbc2/SL4_AMD_1.jpg",
-    },
-    {
-      id: 0,
-      name: "Laptop",
-      price: 1000,
-      category: "Tech",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis odio animi a, illum sapiente magnam? Incidunt quisquam illo provident, sunt labore nemo sit non cupiditate consequuntur, optio debitis tempore et.",
-      imgUrl: "https://www.notebookcheck.net/uploads/tx_nbc2/SL4_AMD_1.jpg",
-    },
-    {
-      id: 0,
-      name: "Tv",
-      price: 1000,
-      category: "Tech",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis odio animi a, illum sapiente magnam? Incidunt quisquam illo provident, sunt labore nemo sit non cupiditate consequuntur, optio debitis tempore et.",
-      imgUrl: "https://www.notebookcheck.net/uploads/tx_nbc2/SL4_AMD_1.jpg",
-    },
-    {
-      id: 0,
-      name: "Telephone",
-      price: 1000,
-      category: "Tech",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis odio animi a, illum sapiente magnam? Incidunt quisquam illo provident, sunt labore nemo sit non cupiditate consequuntur, optio debitis tempore et.",
-      imgUrl: "https://www.notebookcheck.net/uploads/tx_nbc2/SL4_AMD_1.jpg",
-    },
-  ]);
+  const sellerProduct = createProductGrid(getItem("products"));
 
   mainContent.appendChild(sellerProduct);
 }

@@ -33,3 +33,8 @@ function editItem(listType, item) {
   });
   localStorage.setItem(listType, JSON.stringify(newArray));
 }
+
+// function to get products
+function getItem(listType) {
+  return JSON.parse(localStorage.getItem(listType));
+}
