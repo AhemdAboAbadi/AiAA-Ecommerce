@@ -62,14 +62,20 @@ function sellerProductGrid(item) {
   sellerProductMeta.appendChild(sellerProductPrice);
   sellerProductDetails.appendChild(sellerProductDesc);
 
-
-
   // Fill data to elements
+  sellerProduct.setAttribute("id", item.id)
   sellerProductTitle.textContent = item.name
   sellerProductCat.textContent = item.category;
   sellerProductPrice.textContent = item.price;
   sellerProductDesc.textContent = item.description;
   sellerProductImg.setAttribute("src", item.imgUrl);
+
+  // Remove product with remove button
+  productRemove.addEventListener("click", (e) => {
+    // console.dir(e.target.parentNode.parentNode.parentNode.id);
+    const itemId = e.target.parentNode.parentNode.parentNode.id
+    removeItem("products", itemId)
+  })
 
 
   return sellerProduct;
@@ -100,4 +106,5 @@ function createSellerPage() {
 
   mainContent.appendChild(sellerProduct);
 }
+
 
