@@ -12,7 +12,7 @@ body {
 /* Seller Section */
 main {
   width: 1170px;
-  margin: auto;
+  margin: 80px auto;
 }
 
 .add-product-btn {
@@ -42,10 +42,14 @@ main {
 .seller-products .seller-product {
   width: calc(100% / 4);
   padding: 0 30px 45px;
-  position: relative;
 }
 .seller-product-image img {
   width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+.seller-product-details {
+  position: relative;
 }
 .seller-product-title {
   margin: 10px 0 20px;
@@ -66,8 +70,8 @@ main {
 }
 .seller-product-edit-remove {
   position: absolute;
-  right: 25px;
-  top: 170px;
+  right: 0;
+  top: 0;
 }
 .seller-product .product-edit,
 .seller-product .product-remove {
