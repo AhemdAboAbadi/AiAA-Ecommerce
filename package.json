@@ -1,0 +1,26 @@
+{
+  "name": "AiAA-Ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G10/AiAA-Ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G10/AiAA-Ecommerce/issues"
+  },
+  "homepage": "https://github.com/GSG-G10/AiAA-Ecommerce#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
