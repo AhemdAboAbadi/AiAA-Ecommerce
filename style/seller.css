@@ -1,65 +1,108 @@
-.add-form-container{
-    text-align: center;
-    width: 60vw;
-    /* height: 70vh; */
-    padding: 15px;
-    border: solid 2px #000;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Start add form style */
+.add-form-container {
+  text-align: center;
+  width: 60vw;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none;
 }
-.fa-times{
-    align-self: flex-end;
+.add-form-container.active {
+  display: inline;
 }
-.form-title{
-    margin-bottom: 25px;
-    font-size: 20px;
+.content-hider {
+  width: 100vw;
+  height: 100vh;
+  background-color: #060606;
+  opacity: 41%;
+  display: none;
 }
-.add-form{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
+.content-hider.active {
+  display: block;
 }
-.add-form label{
-    align-self: flex-start;
-    margin: 5px 0;
+.fa-times {
+  float: right;
 }
-.add-form input{
-    background-color: #DDDDDD;
-    border: none;
-    outline: none;
+.form-title {
+  clear: right;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+.add-form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-left: 5%;
+}
+.add-form label {
+  align-self: flex-start;
+  margin: 5px 0;
+}
+.add-form input {
+  background-color: #dddddd;
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 70%;
+  padding-left: 10px;
+}
+.label-container {
+  width: 90%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+#details {
+  height: 60px;
+}
+.add-form select {
+  height: 30px;
+  outline: none;
+  width: 70%;
+}
+.add-form-btns {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+.add-form-btns button {
+  height: 40px;
+  width: 200px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+}
+.cancel-button {
+  background-color: #cf1515;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+.save-button {
+  background-color: #dddddd;
+  font-size: 20px;
+  font-weight: bold;
+}
+/* Media Query */
+@media screen and (max-width: 768px) {
+  .add-form-btns button {
+    width: 100px;
     height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+  }
 }
-#details{
-    height: 60px;
-}
-.add-form select{
-    height: 30px;
-    outline: none;
-}
-.add-form-btns{
+@media screen and (max-width: 500px) {
+  .add-form-container {
     width: 90%;
-    display: flex;
-    justify-content: space-around;
+  }
 }
-.add-form-btns button{
-    height: 40px;
-    width: 200px;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    border-radius: 15px;
-}
-.cancel-button{
-    background-color: #CF1515 ;
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-}
-.save-button{
-    background-color: #DDDDDD;
-    font-size: 20px;
-    font-weight: bold;
-}
+/* End add form style */
