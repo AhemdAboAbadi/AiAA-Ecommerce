@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./style/index.css" />
     <link rel="stylesheet" href="./style/nav.css" />
     <title>AiAA-Ecommerce</title>
+    <script src="https://kit.fontawesome.com/f15fba9ca3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/seller.css">
   </head>
   <body>
     <nav>
@@ -75,7 +77,34 @@
       </div>
     </nav>
 
-    <main></main>
+    <main>
+      <div class="add-form-container">
+        <i class="fas fa-times"></i>
+        <h2 class="form-title">Add Product</h2>
+        <form action="" class="add-form">
+          <label for="name">Product Name</label>
+          <input type="text" id="name" />
+          <label for="price">Product Price</label>
+          <input type="text" id="price" />
+          <label for="category">Product Category</label>
+          <input type="text" id="category" name="categories" />
+          <select name="categories" id="categories">
+            <option value="0">categories</option>
+            <option value="1">Books</option>
+            <option value="2">Furniture</option>
+            <option value="3">Tech</option>
+            <option value="4">Shoes</option>
+          </select>
+          <label for="photo">Photo URL</label>
+          <input type="text" id="photo" />
+          <label for="details">Product Details</label>
+        </form>
+        <div class="add-form-btns">
+          <button class="cancel-button">Cancel</button>
+          <button class="save-button">Save</button>
+        </div>
+      </div>
+    </main>
     <script src="./script/data.js"></script>
     <script src="./script/function.js"></script>
     <script src="./script/dom.js"></script>
