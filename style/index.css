@@ -1,5 +1,34 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/*Modify home page layouts */
+.main-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-around;
+}
+.main-img {
+  width: 10rem;
+  height: 12rem;
+  object-fit: cover;
+}
+.main-container {
+  margin: 2rem 2rem 5rem 5rem;
+  width: 16rem;
+}
+.main-h4 {
+  padding: 0.5rem 0;
+}
+.main-price {
+  justify-content: flex-end;
+}
+.main-description {
+  font-weight: 900;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgb(151, 151, 151);
+}
+/*end home page layouts */
