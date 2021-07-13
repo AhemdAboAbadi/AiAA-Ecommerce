@@ -13,3 +13,12 @@ function storeItem(type, item) {
   cartArr.push(item);
   localStorage.setItem(type, JSON.stringify(cartArr));
 }
+
+// function to remove item
+function removeItem (item){
+    let cartArr2 = JSON.parse(localStorage.getItem('cart'))
+    let cartFilter = cartArr2.filter(function(i){
+        return cartArr2[i].id != item.id
+
+    })
+}
