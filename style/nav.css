@@ -1,0 +1,191 @@
+nav{
+height: 70px;
+overflow: hidden;
+}
+
+.content_nav{
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: space-around ;
+}
+
+/* nav tags  ---------------------------------  */
+.nav_logo_content{
+width: 250px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+/* logo */
+.logo_nav{
+padding: 12px;
+font-size: 2rem;
+user-select: none;
+}
+
+.logo_nav .logo_i{
+color: red;
+}
+
+/* btn to go sellers */
+.btn_seller_nav button{
+padding: 10px 16px;
+border-radius: 20px;
+outline: none;
+font-size: 1rem;
+border: none;
+cursor: pointer;
+background-color: #403DC7;
+color: #fff;
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.btn_seller_nav button:hover{
+background-color: #4a47e7;
+}
+
+/* search container */
+.search_nav{
+width: 430px;
+height: 40px;
+display: flex;
+border-radius: 20px;
+overflow: hidden;
+border: 1px solid rgb(117, 115, 115);
+}
+
+.search_nav input{
+width: 88%;
+outline: none;
+border: none;
+padding: 8px;
+background-color: #fff;
+}
+
+.svg_search_nav{
+width: 12%;
+display: flex;
+height: 100%;
+border-left: 1px solid rgb(117, 115, 115);
+align-items: center;
+cursor: pointer;
+background-color: #fff;
+justify-content: center;
+}
+
+.svg_search_nav svg{
+width: 25px;
+height: 25px;
+fill: crimson;
+}
+
+/* user cart , profile */
+.nav_option_user{
+display: flex;
+height: 100%;
+width: 130px;
+justify-content: space-between;
+align-items: center;
+}
+
+.cart_nav{
+padding: 5px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 65px;
+user-select: none;
+cursor: pointer;
+}
+
+.cart_nav svg{
+width: 25px;
+height: 25px;
+}
+
+.cart_nav{
+color: crimson;
+font-size: 1.3rem;
+}
+
+.btn_buyer_nav{
+width: 50px;
+cursor: pointer;
+height: 50px;
+}
+
+.btn_buyer_nav img{
+width: 50px;
+height: 50px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+/* start nav responsve  */
+@media screen and (max-width: 850px){
+.search_nav{
+width: 350px;
+transition: width .5s ease;
+}
+
+.btn_seller_nav button{
+padding: 7px 12px;
+font-size: 0.9rem;
+}
+
+.nav_logo_content{
+width: 200px;
+transition: all .5s ease;
+}
+}
+
+@media screen and (max-width: 650px){
+.search_nav{
+width: 40px;
+transition: width .5s ease;
+} 
+
+.search_nav input{
+display: none;
+}
+
+.svg_search_nav{
+width: 100%;
+border: 0;
+}
+
+.search_nav:hover{
+width: 100%;
+position: absolute;
+z-index: 10;
+border-radius: 0;
+box-shadow:15px 2px 5px 15px rgb(187, 187, 187);
+}
+
+.search_nav:hover input{
+display: inline;
+}
+
+.search_nav:hover .svg_search_nav{
+width: 12%;
+border-left: 1px solid rgb(117, 115, 115);
+}
+
+.nav_logo_content{
+width: 200px;
+transition: all .5s ease;
+}
+}
+
+@media screen and (max-width: 400px){
+.btn_seller_nav button{
+padding: 5px 8px;
+font-size: 0.7rem;
+}
+
+.nav_logo_content{
+width: 170px;
+}
+}
