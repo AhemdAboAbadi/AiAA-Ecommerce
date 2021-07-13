@@ -1,5 +1,25 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Seller Section */
+.add-product-btn {
+  background-color: #60d139;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  height: 44px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+}
+.add-product-btn::before {
+  font-family: 'Font Awesome 5 Free';
+  content: '\f055';
+  font-weight: 900;
+  padding-right: 8px;
+  font-size: 26px;
 }
