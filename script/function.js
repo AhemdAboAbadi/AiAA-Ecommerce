@@ -7,18 +7,29 @@ function storeData() {
 
   console.log("dskojfos");
 }
+
 // function to add items to the cart
 function storeItem(type, item) {
-  let cartArr = JSON.parse(localStorage.getItem(type));
-  cartArr.push(item);
-  localStorage.setItem(type, JSON.stringify(cartArr));
+  const dataArray = JSON.parse(localStorage.getItem(type));
+  item.id = dataArray[dataArray.length - 1].id + 1;
+  dataArray.push(item);
+  localStorage.setItem(type, JSON.stringify(dataArray));
 }
 
 // function to remove item
-function removeItem(item) {
-  let cartArr2 = JSON.parse(localStorage.getItem("cart"));
-  let cartFilter = cartArr2.filter(function (i) {
-    return cartArr2[i].id != item.id;
+function removeItem(listType, id) {
+  const dataArray = JSON.parse(localStorage.getItem(listType));
+  const dataFiltered = dataArray.filter(function (item) {
+    return item.id != id;
   });
-  localStorage.setItem("cart", JSON.stringify(cartFilter));
+  localStorage.setItem(listType, JSON.stringify(dataFiltered));
+}
+
+// function to edit products
+function editItem(listType, item) {
+  const productArray = JSON.parse(localStorage.getItem(listType));
+  const newArray = productArray.map(function (ele) {
+    return ele.id === item.id ? item : ele;
+  });
+  localStorage.setItem(listType, JSON.stringify(newArray));
 }
