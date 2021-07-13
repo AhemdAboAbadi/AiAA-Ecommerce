@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --primary-color: #4a47e7;
+}
 
 /*Modify home page layouts */
 .main-page {
