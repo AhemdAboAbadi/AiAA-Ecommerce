@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="./style/index.css" />
     <link rel="stylesheet" href="./style/nav.css" />
     <link rel="stylesheet" href="./style/form.css">
+    <link rel="stylesheet" href="./style/slider.css">
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
       integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
       crossorigin="anonymous"
     />
+
     <title>AiAA-Ecommerce</title>
     <script
       src="https://kit.fontawesome.com/f15fba9ca3.js"
@@ -21,6 +23,8 @@
   </head>
 
   <body>
+
+
     <nav>
       <div class="content-nav">
         <div class="nav-logo-content">
@@ -67,6 +71,9 @@
         </div>
         <!-- here btn and img for buyer -->
         <div class="nav-option-user">
+          <div class="total-price">
+            <span>TOTAL: <span class="number-price-all">0</span> $</span>
+          </div>
           <div class="cart-nav">
             <svg
               id="Capa-1"
@@ -82,7 +89,7 @@
                 />
               </g>
             </svg>
-            <span>57</span>
+            <span class="numbers-card-user"></span>
           </div>
           <div class="btn-buyer-nav">
             <img src="./image/nav/avatar.jpg" alt="img user profile" />
@@ -91,8 +98,67 @@
       </div>
     </nav>
 
+ <!-- slider sections -->
+ <section class="slider_import_post">
+  <div class="slider_content">
+      <div class="card_slider active" data-card="1">
+          <div class="back_img_slid">
+              <img src="./image/slid/01.jpg" alt="">
+          </div>
+          <div class="front_slid">
+              <div class="content_front_slid">
+                  <div class="category_slid">
+                      <span>Game</span>
+                  </div>
+                  <div class="title_slid">
+                      <span>Screen Netflex</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card_slider " data-card="2">
+          <div class="back_img_slid">
+              <img src="./image/slid/02.jpg" alt="">
+          </div>
+          <div class="front_slid">
+              <div class="content_front_slid">
+                  <div class="category_slid">
+                      <span>new</span>
+                  </div>
+                  <div class="title_slid">
+                      <span>Howto Draw</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card_slider" data-card="3">
+          <div class="back_img_slid">
+              <img src="./image/slid/03.jpeg" alt="">
+          </div>
+          <div class="front_slid">
+              <div class="content_front_slid">
+                  <div class="category_slid">
+                      <span>Tech</span>
+                  </div>
+                  <div class="title_slid">
+                      <span>Date Note</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- points radio for know any post now -->
+      <div class="points_slid">
+          <span class="point_slid active" data-point="0"></span>
+          <span class="point_slid " data-point="1"></span>
+          <span class="point_slid " data-point="2"></span>
+      </div>
+  </div>
+</section>
+
     <main>
     </main>
+
+
     <section>
       <div class="add-form-container">
         <i class="fas fa-times"></i>
@@ -155,6 +221,7 @@
     <script src="./script/function.js"></script>
     <script src="./script/dom.js"></script>
     <script src="./script/index.js"></script>
+    <script src="./script/slider.js"></script>
     <script
       src="https://kit.fontawesome.com/b988b57d00.js"
       crossorigin="anonymous"

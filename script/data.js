@@ -3,7 +3,7 @@
 let products = [
   {
     id: 0,
-    name: "Laptop",
+    name: "Laptop HP",
     price: 1000,
     category: "Tech",
     description:
@@ -117,6 +117,28 @@ let products = [
     imgUrl:
       "https://www.royaloakindia.com/thumbimages/ROYIND-royaloak-grand-Coffeetable-Desktop-thumbnail1.webp",
   },
+
+  {
+    id: 11,
+    name: "alaa star",
+    price: 2000,
+    category: "Otaku",
+    description:
+      "Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku ",
+    imgUrl:
+      "https://cdn.discordapp.com/avatars/401874828111642625/3b72f9e1a5a19803b8df571a768ccb2c.png?size=256",
+  },
+
+  {
+    id: 11,
+    name: "osama star",
+    price: 500,
+    category: "Otaku",
+    description:
+      "Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku Otaku ",
+    imgUrl:
+      "https://cdn.discordapp.com/avatars/401847801270501376/78ada3fb8bc8175a95812cde5a3d9bc5.png?size=256",
+  },
 ];
 // cart array
 let cart = [];
@@ -124,6 +146,23 @@ let cart = [];
 // data for auto complete
 
 const autoComplete = [
+  "alaa",
+  "Laptop HP",
+  "Laptop HP alaa",
+  "white bootes",
+  "black bootes",
+  "white bootes",
+  "black bootes",
+  "mobile",
+  "play station",
+  "men in the sun",
+  "Robinson Crusoe",
+  "1984",
+  "pink boots",
+  "bed",
+  "capboard",
+  "Lorem ipsum dolor sit, amet consectetur adipisicing el",
+  "table",
   "a school",
   "a serbian film",
   "a series of unfortunate events",
