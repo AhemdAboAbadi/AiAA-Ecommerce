@@ -44,12 +44,14 @@ function getItem(listType) {
 }
 
 // Search Function
-function cardFilter(array,inputText) {
+function cardFilter(array, inputText) {
   return array.filter((item) => {
-   return (
-     item.name.toLowerCase().includes(inputText) ||
-     item.description.toLowerCase().includes(inputText)
-   );
- });
+    return (
+      item.name.toLowerCase().includes(inputText) ||
+      item.description.toLowerCase().includes(inputText)
+    );
+  });
 }
+if (typeof module !== "undefined") {
   module.exports = cardFilter;
+}
