@@ -13,6 +13,11 @@
       crossorigin="anonymous"
     />
     <title>AiAA-Ecommerce</title>
+    <script
+      src="https://kit.fontawesome.com/f15fba9ca3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style/seller.css" />
   </head>
 
   <body>
@@ -81,9 +86,49 @@
         </div>
       </div>
     </nav>
-    <main>
 
+    <main>
     </main>
+    <section>
+      <div class="add-form-container">
+        <i class="fas fa-times"></i>
+        <h2 class="form-title">Add Product</h2>
+        <form action="" class="add-form">
+          <div class="label-container">
+            <label for="name">Product Name</label>
+            <input type="text" id="name" />
+          </div>
+          <div class="label-container">
+            <label for="price">Product Price</label>
+            <input type="text" id="price" />
+          </div>
+          <div class="label-container">
+            <label for="category">Product Category</label>
+            <select name="categories" id="categories">
+              <option value="0">categories</option>
+              <option value="1">Books</option>
+              <option value="2">Furniture</option>
+              <option value="3">Tech</option>
+              <option value="4">Shoes</option>
+            </select>
+          </div>
+          <div class="label-container">
+            <label for="photo">Photo URL</label>
+            <input type="text" id="photo" />
+          </div>
+          <div class="label-container">
+            <label for="details">Product Details</label>
+            <input type="text" id="details" />
+          </div>
+        </form>
+        <div class="add-form-btns">
+          <button class="cancel-button">Cancel</button>
+          <button class="save-button">Save</button>
+        </div>
+      </div>
+      <div class="content-hider"></div>
+
+    </section>
 
     <footer class="footer-container">
       <div>
@@ -92,7 +137,7 @@
         <p class="footer-paragraph">Any Comments Or Question </p>
         <p class="footer-paragraph">Sign Up For The AiAA-Ecommerce </p>
       </div>
-      <div>
+      <div class="footer-div-social">
         <p class="footer-paragraph footer-social"><i class="fab fa-twitter font-awesome"></i> On Twitter</p>
         <p class="footer-paragraph footer-social"><i class="fab fa-facebook-f font-awesome"></i></i> On Facebook</p>
         <p class="footer-paragraph footer-social"><i class="fab fa-instagram font-awesome"></i> On Instagram</p>
