@@ -1,3 +1,90 @@
+const sellerBtn = document.querySelector(".btn-seller-nav button");
+
+// Create (Add Product Button)
+function createAddButton() {
+  const addProductBtn = document.createElement("button");
+  addProductBtn.classList = "add-product-btn";
+  addProductBtn.setAttribute("id", "addProductBtn");
+  addProductBtn.textContent = "Add Product";
+
+  return addProductBtn;
+}
+
+function sellerProductGrid(item) {
+  // Create seller product
+  const sellerProduct = document.createElement("div");
+  const sellerProductImage = document.createElement("div");
+  const sellerProductImg = document.createElement("img");
+  const sellerProductDetails = document.createElement("div");
+  const sellerProductTitle = document.createElement("h3");
+  const sellerProductEditRemove = document.createElement("div");
+  const productEdit = document.createElement("button");
+  const productRemove = document.createElement("button");
+  const sellerProductMeta = document.createElement("div");
+  const sellerProductCat = document.createElement("span");
+  const sellerProductPrice = document.createElement("span");
+  const sellerProductDesc = document.createElement("p");
+
+  // Add class for every Elements
+  sellerProduct.classList = "seller-product";
+  sellerProductImage.classList = "seller-product-image";
+  sellerProductDetails.classList = "seller-product-details";
+  sellerProductTitle.classList = "seller-product-title";
+  sellerProductMeta.classList = "seller-product-meta";
+  sellerProductCat.classList = "seller-product-cat";
+  sellerProductPrice.classList = "seller-product-price";
+  sellerProductDesc.classList = "seller-product-desc";
+  sellerProductEditRemove.classList = "seller-product-edit-remove";
+  productEdit.classList = "product-edit";
+  productRemove.classList = "product-remove";
+
+  // Append child to parents
+  sellerProduct.appendChild(sellerProductImage);
+  sellerProductDetails.appendChild(sellerProductEditRemove);
+  sellerProductEditRemove.appendChild(productEdit);
+  sellerProductEditRemove.appendChild(productRemove);
+  sellerProductImage.appendChild(sellerProductImg);
+  sellerProduct.appendChild(sellerProductDetails);
+  sellerProductDetails.appendChild(sellerProductTitle);
+  sellerProductDetails.appendChild(sellerProductMeta);
+  sellerProductMeta.appendChild(sellerProductCat);
+  sellerProductMeta.appendChild(sellerProductPrice);
+  sellerProductDetails.appendChild(sellerProductDesc);
+
+  // Fill data to elements
+  sellerProduct.setAttribute("id", item.id);
+  sellerProductTitle.textContent = item.name;
+  sellerProductCat.textContent = item.category;
+  sellerProductPrice.textContent = item.price;
+  sellerProductDesc.textContent = item.description;
+  sellerProductImg.setAttribute("src", item.imgUrl);
+  productRemove.setAttribute("id", item.id);
+
+  // Event listener for remove button
+  productRemove.addEventListener("click", removeSelectedItem);
+
+  return sellerProduct;
+}
+
+function createProductGrid(arr) {
+  const sellerProducts = document.createElement("div");
+  sellerProducts.classList = "seller-products";
+
+  arr.forEach(function (item) {
+    const product = sellerProductGrid(item);
+    sellerProducts.appendChild(product);
+  });
+  return sellerProducts;
+}
+
+// Remove product with remove button
+function removeSelectedItem(e) {
+  e.target.parentElement.parentElement.parentElement.remove();
+  const itemId = e.target.parentNode.parentNode.parentNode.id;
+
+  removeItem("products", itemId);
+}
+
 function creatCart(item) {
   const cartContainer = document.createElement("div");
   const cartImg = document.createElement("img");
@@ -86,15 +173,46 @@ function creatCartListAsList(arr) {
   return sectionContainerList;
 }
 
+// Create Home Page
 function creatHome() {
   const main = document.querySelector("main");
   while (main.firstChild) {
     main.removeChild(main.lastChild);
   }
-  //   const cartList = creatCartList(getItem("products"));
-  const cartList = creatCartListAsList(getItem("products"));
+  const cartList = creatCartList(getItem("products"));
 
   main.appendChild(cartList);
+
+  sellerBtn.textContent = "I'm a Seller";
+
+  sellerBtn.addEventListener("click", function () {
+    createSellerPage();
+  });
+}
+
+// Create Seller Page
+function createSellerPage() {
+  const mainContent = document.querySelector("main");
+
+  while (mainContent.firstChild) {
+    mainContent.removeChild(mainContent.lastChild);
+  }
+
+  const sellerSection = document.createElement("section");
+  sellerSection.classList = "seller-section-grid";
+
+  const sellerProducts = createProductGrid(getItem("products"));
+  const addButton = createAddButton();
+
+  sellerSection.appendChild(addButton);
+  sellerSection.appendChild(sellerProducts);
+  mainContent.appendChild(sellerSection);
+
+  sellerBtn.textContent = "All Products";
+
+  sellerBtn.addEventListener("click", function () {
+    creatHome();
+  });
 }
 // add card eventlistener
 const saveButton = document.querySelector(".save-button");
