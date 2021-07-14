@@ -175,6 +175,15 @@ function sellerProductGrid(item) {
     addFormContainer.classList.add("active");
     contentHider.classList.add("active");
     document.body.style.overflow = "hidden";
+    const editForm = document.querySelector(".add-form");
+    console.dir(e.target.parentNode.parentNode);
+    editForm[0].value = item.name;
+    editForm[1].value = item.price;
+    editForm[2].value = item.category;
+    editForm[3].value = item.imgUrl;
+    editForm[4].value = item.description;
+
+    console.log(editForm[2]);
   });
 
   // Append child to parents
@@ -315,7 +324,6 @@ function creatCartListAsList(arr) {
 // Create Home Page
 function creatHome() {
   const main = document.querySelector("main");
-
   removeChild(main);
   createFilterSection();
 
