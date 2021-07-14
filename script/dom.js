@@ -3,6 +3,7 @@ const searchStart = document.querySelector(".svg-search-nav");
 const containerPopAuto = document.querySelector(".auto-complete-search");
 const listAutoComplete = document.querySelector(".list-auto-complete");
 const sellerBtn = document.querySelector(".btn-seller-nav button");
+const sliderContainer = document.querySelector(".slider_import_post");
 let isAdd = false;
 let isList = false;
 let editId;
@@ -241,6 +242,19 @@ function creatCart(item) {
   const cartDescriptionTitle = document.createElement("p");
   const cartDescription = document.createElement("p");
 
+  const svgCart = document.createElement("img");
+  const svgCartAdded = document.createElement("img");
+
+  svgCart.src = "../image/nav/plus.svg";
+  svgCartAdded.src = "../image/nav/check.svg";
+
+  svgCart.classList.add("svg-cart-add");
+  svgCartAdded.classList.add("svg-cart-add-done");
+
+  svgCart.setAttribute("data-numberCard", item.id);
+  cartContainer.appendChild(svgCart);
+  cartContainer.appendChild(svgCartAdded);
+
   cartContainer.classList.add("main-container");
   cartContainer.id = item.id;
   cartImg.classList.add("main-img");
@@ -250,7 +264,7 @@ function creatCart(item) {
   cartDescription.classList.add("main-details");
 
   cartTag.appendChild(document.createTextNode(item.name));
-  cartDescriptionTitle.appendChild(document.createTextNode("Description"));
+  cartDescriptionTitle.appendChild(document.createTextNode(item.category));
   cartImg.setAttribute("src", item.imgUrl);
   cartDescription.appendChild(document.createTextNode(item.description));
   cartPrice.appendChild(document.createTextNode(item.price));
@@ -260,7 +274,6 @@ function creatCart(item) {
   cartContainer.appendChild(cartPrice);
   cartContainer.appendChild(cartDescriptionTitle);
   cartContainer.appendChild(cartDescription);
-
   return cartContainer;
 }
 
@@ -295,7 +308,7 @@ function creatCartAsList(item) {
   cartDescriptionList.classList.add("main-details-list");
 
   cartTagList.appendChild(document.createTextNode(item.name));
-  cartDescriptionTitleList.appendChild(document.createTextNode("Description"));
+  cartDescriptionTitleList.appendChild(document.createTextNode(item.category));
   cartImgList.setAttribute("src", item.imgUrl);
   cartDescriptionList.appendChild(document.createTextNode(item.description));
   cartPriceList.appendChild(document.createTextNode(item.price));
@@ -321,6 +334,9 @@ function creatCartListAsList(arr) {
   return sectionContainerList;
 }
 
+let countCart = 0;
+let allTotlePrices = document.querySelector(".number-price-all");
+
 // Create Home Page
 function creatHome() {
   const main = document.querySelector("main");
@@ -333,9 +349,61 @@ function creatHome() {
   sellerBtn.textContent = "I'm a Seller";
 
   sellerBtn.addEventListener("click", function () {
+    sliderContainer.remove();
     createSellerPage();
   });
+
+  let svgCartAdd = document.querySelectorAll(".svg-cart-add");
+  const numbersCardUser = document.querySelector(".numbers-card-user");
+  let totlePrice = 0;
+
+  svgCartAdd.forEach((pk) => {
+    pk.addEventListener("click", () => {
+      const cardNumId = pk.getAttribute("data-numberCard");
+      countCart++;
+      numbersCardUser.textContent = countCart;
+
+      pk.classList.add("active");
+
+      let oldData = JSON.parse(localStorage.getItem("cart"));
+
+      products.forEach((item) => {
+        if (item.id == cardNumId) {
+          totlePrice += item.price;
+          oldData.push(item);
+          localStorage.setItem("cart", JSON.stringify(oldData));
+        }
+      });
+      console.log(totlePrice);
+      allTotlePrices.textContent = totlePrice;
+      localStorage.setItem("numCart", JSON.stringify(countCart));
+      localStorage.setItem("mytotleprice", JSON.stringify(totlePrice));
+    });
+  });
 }
+
+const cartNav = document.querySelector(".cart-nav");
+const numbersCardUser = document.querySelector(".numbers-card-user");
+
+getNumCart();
+
+function getNumCart() {
+  const numbersCardsCart = JSON.parse(localStorage.getItem("numCart"));
+  numbersCardUser.textContent = numbersCardsCart;
+  const dataPrice = JSON.parse(localStorage.getItem("mytotleprice"));
+  allTotlePrices.textContent = dataPrice;
+}
+
+cartNav.addEventListener("click", () => {
+  sliderContainer.remove();
+  const dataCart = JSON.parse(localStorage.getItem("cart"));
+
+  const main = document.querySelector("main");
+  removeChild(main);
+
+  const cartList = creatCartList(dataCart);
+  main.appendChild(cartList);
+});
 
 // Create Seller Page
 function createSellerPage() {

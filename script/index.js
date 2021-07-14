@@ -30,6 +30,7 @@ searchValue.addEventListener("keyup", () => {
 
 // for search user
 searchStart.addEventListener("click", () => {
+  sliderContainer.remove();
   let cardForSearched = [];
   containerPopAuto.classList.remove("active");
   let wrdSearched = searchValue.value.toLowerCase().trim();
@@ -46,7 +47,6 @@ searchStart.addEventListener("click", () => {
     }
   });
 
-  // ///////////////////////////////////
   const main = document.querySelector("main");
   removeChild(main);
   createFilterSection();
@@ -90,7 +90,8 @@ callCreateEventsFilter();
 
 const logoNav = document.querySelector(".logo-nav");
 logoNav.addEventListener("click", () => {
-  creatHome();
+  localStorage.clear();
+  location.reload();
 });
 
 function sortFilterPrice() {
