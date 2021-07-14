@@ -1,2 +1,3 @@
-createSellerPage();
 storeData()
+createSellerPage();
+creatHome();
