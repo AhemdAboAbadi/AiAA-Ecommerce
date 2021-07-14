@@ -1,5 +1,9 @@
 nav {
-  height: 80px;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .content-nav {
@@ -7,6 +11,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background-color: #fff;
 }
 /* nav tags  ---------------------------------  */
 .nav-logo-content {
@@ -38,10 +43,12 @@ nav {
   background-color: var(--primary-color);
   color: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease-in-out;
 }
 
 .btn-seller-nav button:hover {
   background-color: #4b49ca;
+  transform: scale(1.05);
 }
 
 /* search container */
@@ -84,9 +91,18 @@ nav {
 .nav-option-user {
   display: flex;
   height: 100%;
-  width: 130px;
+  width: 270px;
   justify-content: space-between;
   align-items: center;
+}
+
+.total-price {
+  font-size: 0.9rem;
+}
+.number-price-all {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 .cart-nav {
@@ -94,7 +110,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 65px;
+  width: 55px;
   user-select: none;
   cursor: pointer;
 }
@@ -120,6 +136,7 @@ nav {
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 /* start nav responsve  */
@@ -312,7 +329,7 @@ main {
 
 .style-list.active {
   pointer-events: none;
-  background-color: rgb(189, 189, 189);
+  background-color: rgb(216, 216, 216);
 }
 
 .style-grid {
@@ -324,5 +341,5 @@ main {
 
 .style-grid.active {
   pointer-events: none;
-  background-color: rgb(189, 189, 189);
+  background-color: rgb(216, 216, 216);
 }
