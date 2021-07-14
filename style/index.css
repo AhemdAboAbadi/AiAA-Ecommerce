@@ -99,3 +99,35 @@
   }
 }
 /* end media */
+
+/* start footer style  */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: rgb(34, 34, 34);
+  width: 100%;
+  color: white;
+  padding: 5rem 5rem 7rem 5rem;
+  font-size: 20px;
+}
+.footer-paragraph {
+  padding: 1rem 0 2rem 0;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+.footer-social {
+  padding-right: 10rem;
+}
+.font-awesome {
+  padding-right: 1.5rem;
+}
+.footer-paragraph:hover {
+  font-size: 23px;
+  transition: 1s;
+  color: antiquewhite;
+}
+.footer-social:hover {
+  color: rgb(221, 0, 0);
+}
+/* end footer style  */
