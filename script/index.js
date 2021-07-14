@@ -1,3 +1,6 @@
+storeData();
+creatHome();
+
 //for auto complete user
 searchValue.addEventListener("keyup", () => {
   removeChild(listAutoComplete);
@@ -37,3 +40,27 @@ searchStart.addEventListener("click", () => {
     }
   });
 });
+
+
+
+  const styleGrid = document.querySelector('.style-grid')
+  const styleList = document.querySelector('.style-list')
+  const main = document.querySelector("main");
+  
+
+styleList.addEventListener('click',()=>{
+  const mainPage = document.querySelector('.main-page')
+// console.log(mainPage);
+main.removeChild(mainPage)
+const cartList = creatCartListAsList(getItem("products"));
+main.appendChild(cartList);
+})
+
+styleGrid.addEventListener('click',()=>{
+  const containerCart = document.querySelector('.container-cart')
+// console.log(containerCart);
+main.removeChild(containerCart)
+const cartList = creatCartList(getItem("products"));
+main.appendChild(cartList);
+})
+  
