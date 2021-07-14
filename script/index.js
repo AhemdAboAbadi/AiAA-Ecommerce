@@ -30,7 +30,7 @@ searchValue.addEventListener("keyup", () => {
 // for search user
 searchStart.addEventListener("click", () => {
   sliderContainer.remove();
-  let cardForSearched = [];
+  // let cardForSearched = [];
   containerPopAuto.classList.remove("active");
   let wrdSearched = searchValue.value.toLowerCase().trim();
 

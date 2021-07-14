@@ -32,6 +32,6 @@ describe("filter array", () => {
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis odio animi a, illum sapiente magnam? Incidunt quisquam illo provident, sunt labore nemo sit non cupiditate consequuntur, optio debitis tempore et.",
           imgUrl: "https://www.notebookcheck.net/uploads/tx_nbc2/SL4_AMD_1.jpg",
         }];
-    expect(actual).toBe(expected);
+    expect(actual).toEqual(expected);
   });
 });
