@@ -1,6 +1,5 @@
 nav {
-  height: 70px;
-  overflow: hidden;
+  height: 80px;
 }
 
 .content-nav {
@@ -9,7 +8,6 @@ nav {
   align-items: center;
   justify-content: space-around;
 }
-
 /* nav tags  ---------------------------------  */
 .nav-logo-content {
   width: 250px;
@@ -22,7 +20,7 @@ nav {
 .logo-nav {
   padding: 12px;
   font-size: 2rem;
-  user-select: none;
+  cursor: pointer;
 }
 
 .logo-nav .logo-i {
@@ -32,28 +30,28 @@ nav {
 /* btn to go sellers */
 .btn-seller-nav button {
   padding: 10px 16px;
-  border-radius: 5px;
+  border-radius: 20px;
   outline: none;
   font-size: 1rem;
   border: none;
   cursor: pointer;
-  background-color: #403dc7;
+  background-color: var(--primary-color);
   color: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .btn-seller-nav button:hover {
-  background-color: var(--primary-color);
+  background-color: #4b49ca;
 }
 
 /* search container */
 .search-nav {
+  position: relative;
   width: 430px;
   height: 40px;
   display: flex;
   border-radius: 5px;
-  overflow: hidden;
-  border: 1px solid rgb(117, 115, 115);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
 }
 
 .search-nav input {
@@ -62,6 +60,7 @@ nav {
   border: none;
   padding: 8px;
   background-color: #fff;
+  border-radius: 5px;
 }
 
 .svg-search-nav {
@@ -188,4 +187,142 @@ nav {
   .nav-logo-content {
     width: 170px;
   }
+}
+
+/* ------ section filter in main */
+main {
+  width: 90%;
+  margin: 30px auto;
+}
+
+.section-filter {
+  border-bottom: 1px solid rgb(100, 100, 100);
+  height: 50px;
+  margin: 0 auto;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.filter-data-search {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: 1.3rem;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.filter-data-search img {
+  width: 30px;
+  height: 30px;
+}
+
+.select-price,
+.select-category {
+  padding: 10px 15px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.select-price:hover,
+.select-category:hover {
+  background-color: rgb(236, 236, 236);
+}
+
+.style-show-cards {
+  display: flex;
+  justify-content: space-between;
+  width: 60px;
+}
+
+.style-show-cards Img {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+  main {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .select-price,
+  .select-category {
+    padding: 7px 12px;
+  }
+
+  .section-filter {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .select-price,
+  .select-category {
+    padding: 5px 8px;
+  }
+}
+
+/* for auto complete */
+.auto-complete-search {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.582);
+  width: 100%;
+  top: 40px;
+  left: 0;
+  z-index: 100;
+  min-height: 0;
+  display: none;
+}
+
+.auto-complete-search.active {
+  display: inline;
+}
+
+.list-auto-complete {
+  list-style: none;
+  padding: 5px 0;
+}
+
+.list-auto-complete li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.list-auto-complete li:hover {
+  background-color: rgb(206, 206, 206);
+}
+
+.style-list {
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.style-list.active {
+  pointer-events: none;
+  background-color: rgb(189, 189, 189);
+}
+
+.style-grid {
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.style-grid.active {
+  pointer-events: none;
+  background-color: rgb(189, 189, 189);
 }

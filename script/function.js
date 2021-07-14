@@ -32,6 +32,12 @@ function editItem(listType, item) {
   localStorage.setItem(listType, JSON.stringify(newArray));
 }
 
+// for delete all child
+function removeChild(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
 // function to get products
 function getItem(listType) {
   return JSON.parse(localStorage.getItem(listType));
