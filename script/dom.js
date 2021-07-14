@@ -184,7 +184,6 @@ function sellerProductGrid(item) {
     editForm[3].value = item.imgUrl;
     editForm[4].value = item.description;
 
-    console.log(editForm[2]);
   });
 
   // Append child to parents
@@ -245,8 +244,8 @@ function creatCart(item) {
   const svgCart = document.createElement("img");
   const svgCartAdded = document.createElement("img");
 
-  svgCart.src = "../image/nav/plus.svg";
-  svgCartAdded.src = "../image/nav/check.svg";
+  svgCart.src = "./image/nav/plus.svg";
+  svgCartAdded.src = "./image/nav/check.svg";
 
   svgCart.classList.add("svg-cart-add");
   svgCartAdded.classList.add("svg-cart-add-done");
@@ -374,7 +373,6 @@ function creatHome() {
           localStorage.setItem("cart", JSON.stringify(oldData));
         }
       });
-      console.log(totlePrice);
       allTotlePrices.textContent = totlePrice;
       localStorage.setItem("numCart", JSON.stringify(countCart));
       localStorage.setItem("mytotleprice", JSON.stringify(totlePrice));
