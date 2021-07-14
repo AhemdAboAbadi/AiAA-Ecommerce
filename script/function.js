@@ -4,8 +4,6 @@ function storeData() {
     localStorage.setItem("products", JSON.stringify(products));
   if (!localStorage.getItem("cart"))
     localStorage.setItem("cart", JSON.stringify(cart));
-
-  console.log("dskojfos");
 }
 
 // function to add items to the cart
@@ -14,6 +12,10 @@ function storeItem(type, item) {
   item.id = dataArray[dataArray.length - 1].id + 1;
   dataArray.push(item);
   localStorage.setItem(type, JSON.stringify(dataArray));
+}
+// function to remove item
+function getItem(listType) {
+  return JSON.parse(localStorage.getItem(listType));
 }
 
 // function to remove item

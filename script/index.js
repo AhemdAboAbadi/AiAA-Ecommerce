@@ -1,1 +1,2 @@
-storeData()
+storeData();
+creatHome();
