@@ -2,18 +2,7 @@ const searchValue = document.querySelector(".search-input");
 const searchStart = document.querySelector(".svg-search-nav");
 const containerPopAuto = document.querySelector(".auto-complete-search");
 const listAutoComplete = document.querySelector(".list-auto-complete");
-
-let arr = [
-  {
-    id: 0,
-    name: "fsd",
-    price: 1000,
-    category: "Tech",
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis odio animi a, illum sapiente magnam? Incidunt quisquam illo provident, sunt labore nemo sit non cupiditate consequuntur, optio debitis tempore et.",
-    imgUrl: "https://www.notebookcheck.net/uploads/tx_nbc2/SL4_AMD_1.jpg",
-  },
-];
+let isList = false;
 
 function getSelectValue() {
   const listLiAuto = document.querySelector(".list-auto-complete");
@@ -63,7 +52,6 @@ function filterCategoryDom() {
   divCategory.classList.add("category-filter");
   selectCategory.classList.add("select-category");
   divCategory.appendChild(selectCategory);
-
   return divCategory;
 }
 
@@ -104,6 +92,13 @@ function filterStyleShow() {
   styleGrid.appendChild(imgGrid);
   divStyleShow.appendChild(styleList);
   divStyleShow.appendChild(styleGrid);
+
+  if (isList) {
+    styleList.classList.add("active");
+  } else {
+    styleGrid.classList.add("active");
+  }
+
   return divStyleShow;
 }
 
@@ -125,7 +120,6 @@ function createFilterSection() {
   const filterStyle = filterStyleShow();
   divContainer.appendChild(filterStyle);
 }
-
 
 //
 function creatCart(item) {
@@ -219,10 +213,10 @@ function creatCartListAsList(arr) {
 function creatHome() {
   const main = document.querySelector("main");
 
-  removeChild(main)
+  removeChild(main);
   createFilterSection();
 
-  // const cartList = creatCartList(getItem("products"));
-  const cartList = creatCartListAsList(getItem("products"));
+  const cartList = creatCartList(getItem("products"));
+  // const cartList = creatCartListAsList(getItem("products"));
   main.appendChild(cartList);
 }
