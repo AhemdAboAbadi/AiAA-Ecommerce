@@ -42,3 +42,14 @@ function removeChild(parent) {
 function getItem(listType) {
   return JSON.parse(localStorage.getItem(listType));
 }
+
+// Search Function
+function cardFilter(array,inputText) {
+  return array.filter((item) => {
+   return (
+     item.name.toLowerCase().includes(inputText) ||
+     item.description.toLowerCase().includes(inputText)
+   );
+ });
+}
+  module.exports = cardFilter;
