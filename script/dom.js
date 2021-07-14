@@ -1,22 +1,20 @@
 const mainContent = document.querySelector("main");
 
 
-// const sellerSection = document.createElement("section");
-// sellerSection.classList = "seller-section-grid";
-// mainContent.appendChild(sellerSection);
-
+const sellerSection = document.createElement("section");
+sellerSection.classList = "seller-section-grid";
+mainContent.appendChild(sellerSection);
 
 // Create (Add Product Button)
 const addProductBtn = document.createElement("button");
 addProductBtn.classList = "add-product-btn";
 addProductBtn.setAttribute("id", "addProductBtn")
 addProductBtn.textContent = "Add Product";
-mainContent.appendChild(addProductBtn);
+sellerSection.appendChild(addProductBtn);
 
 const sellerProducts = document.createElement("div");
 sellerProducts.classList = "seller-products";
-// sellerSection.appendChild(sellerProducts);
-
+sellerSection.appendChild(sellerProducts);
 
 
 
@@ -72,7 +70,7 @@ function sellerProductGrid(item) {
   sellerProductImg.setAttribute("src", item.imgUrl);
   productRemove.setAttribute("id", item.id)
 
-
+  // Event listener for remove button
   productRemove.addEventListener("click", removeSelectedItem)
 
 
@@ -97,14 +95,14 @@ function createSellerPage() {
   //     mainContent.removeChild(mainContent.children[i].id !== "addProductBtn");
   //   }
   // }
-  // while (mainContent.firstChild) {
-  //   mainContent.removeChild(mainContent.lastChild);
-  // }
+  while (mainContent.firstChild) {
+    mainContent.removeChild(mainContent.lastChild);
+  }
   const sellerProduct = createProductGrid(getItem("products"));
 
-  mainContent.appendChild(sellerProduct);
-}
+  mainContent.appendChild(sellerSection);
 
+}
 
 // Remove product with remove button
 function removeSelectedItem(e) {
