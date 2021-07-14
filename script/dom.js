@@ -1,4 +1,6 @@
 const sellerBtn = document.querySelector(".btn-seller-nav button");
+let isAdd = false;
+let editId;
 
 // Create (Add Product Button)
 function createAddButton() {
@@ -6,6 +8,12 @@ function createAddButton() {
   addProductBtn.classList = "add-product-btn";
   addProductBtn.setAttribute("id", "addProductBtn");
   addProductBtn.textContent = "Add Product";
+  addProductBtn.addEventListener("click", () => {
+    isAdd = true;
+    addFormContainer.classList.add("active");
+    contentHider.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
 
   return addProductBtn;
 }
@@ -37,6 +45,13 @@ function sellerProductGrid(item) {
   sellerProductEditRemove.classList = "seller-product-edit-remove";
   productEdit.classList = "product-edit";
   productRemove.classList = "product-remove";
+  productEdit.addEventListener("click", (e) => {
+    isAdd = false;
+     editId = e.target.parentNode.parentNode.parentNode.id
+    addFormContainer.classList.add("active");
+    contentHider.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
 
   // Append child to parents
   sellerProduct.appendChild(sellerProductImage);
@@ -101,7 +116,7 @@ function creatCart(item) {
   cartDescriptionTitle.classList.add("main-description");
   cartDescription.classList.add("main-details");
 
-  cartTag.appendChild(document.createTextNode(item.category));
+  cartTag.appendChild(document.createTextNode(item.name));
   cartDescriptionTitle.appendChild(document.createTextNode("Description"));
   cartImg.setAttribute("src", item.imgUrl);
   cartDescription.appendChild(document.createTextNode(item.description));
@@ -146,7 +161,7 @@ function creatCartAsList(item) {
   cartDescriptionTitleList.classList.add("main-description-list");
   cartDescriptionList.classList.add("main-details-list");
 
-  cartTagList.appendChild(document.createTextNode(item.category));
+  cartTagList.appendChild(document.createTextNode(item.name));
   cartDescriptionTitleList.appendChild(document.createTextNode("Description"));
   cartImgList.setAttribute("src", item.imgUrl);
   cartDescriptionList.appendChild(document.createTextNode(item.description));
@@ -218,13 +233,19 @@ function createSellerPage() {
 const saveButton = document.querySelector(".save-button");
 const cancelBtn = document.querySelector(".cancel-button");
 saveButton.addEventListener("click", () => {
-  const cardObject = createCardObject();
-  storeItem("products", cardObject);
+  if (isAdd) {
+    const cardObject = createCardObject();
+    document.body.style.overflow = "auto";
+    storeItem("products", cardObject);
+  } else {
+    const object = createCardObject(parseInt(editId));
+    editItem("products", object);
+  }
   addFormContainer.classList.remove("active");
   contentHider.classList.remove("active");
 });
 // function to create object
-function createCardObject() {
+function createCardObject(id) {
   const saveBtn = document.querySelector(".save-button");
   const nameInput = document.getElementById("name");
   const priceInput = document.getElementById("price");
@@ -233,6 +254,7 @@ function createCardObject() {
   const categories = document.getElementById("categories");
   const categoryText = categories.options[categories.selectedIndex].text;
   let cardObject = {};
+  cardObject.id = id;
   cardObject.name = nameInput.value;
   cardObject.price = priceInput.value;
   cardObject.category = categoryText;
@@ -246,8 +268,10 @@ const xBtn = document.querySelector(".add-form-container .fa-times");
 xBtn.addEventListener("click", () => {
   addFormContainer.classList.remove("active");
   contentHider.classList.remove("active");
+  document.body.style.overflow = "auto";
 });
 cancelBtn.addEventListener("click", () => {
   addFormContainer.classList.remove("active");
   contentHider.classList.remove("active");
+  document.body.style.overflow = "auto";
 });
