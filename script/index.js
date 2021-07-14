@@ -27,7 +27,6 @@ searchValue.addEventListener("keyup", () => {
   }
   getSelectValue();
 });
-
 // for search user
 searchStart.addEventListener("click", () => {
   sliderContainer.remove();
@@ -38,14 +37,15 @@ searchStart.addEventListener("click", () => {
   let arr = getItem("products");
 
   searchValue.value = "";
-  arr.forEach((item) => {
-    if (
-      item.name.toLowerCase().includes(wrdSearched) ||
-      item.description.toLowerCase().includes(wrdSearched)
-    ) {
-      cardForSearched.push(item);
-    }
-  });
+  const cardForSearched = cardFilter(arr, wrdSearched );
+  // arr.forEach((item) => {
+  //   if (
+  //     item.name.toLowerCase().includes(wrdSearched) ||
+  //     item.description.toLowerCase().includes(wrdSearched)
+  //   ) {
+  //     cardForSearched.push(item);
+  //   }
+  // });
 
   const main = document.querySelector("main");
   removeChild(main);
