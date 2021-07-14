@@ -6,6 +6,109 @@
 :root {
   --primary-color: #4a47e7;
 }
+body {
+  font-family: sans-serif;
+}
+/* Seller Section */
+main {
+  margin: 80px auto;
+}
+@media screen and (min-width: 1200px) {
+  main {
+    width: 1170px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  main {
+    width: 90%;
+  }
+}
+.add-product-btn {
+  background-color: #60d139;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  height: 44px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.add-product-btn::before {
+  font-family: 'Font Awesome 5 Free';
+  content: '\f055';
+  font-weight: 900;
+  padding-right: 8px;
+  font-size: 26px;
+}
+
+.seller-products {
+  display: flex;
+  flex-wrap: wrap;
+}
+.seller-products .seller-product {
+  width: calc(100% / 4);
+  padding: 0 30px 45px;
+}
+@media screen and (max-width: 900px) {
+  .seller-products .seller-product {
+    width: calc(100% / 2);
+  }
+}
+@media screen and (max-width: 600px) {
+  .seller-products .seller-product {
+    width: 100%;
+  }
+}
+
+.seller-product-image img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+.seller-product-details {
+  position: relative;
+}
+.seller-product-title {
+  margin: 10px 0 20px;
+}
+.seller-product-meta {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #8a8a8a;
+  padding-bottom: 6px;
+  font-size: 14px;
+}
+.seller-product-price {
+  color: var(--primary-color);
+}
+.seller-product-desc {
+  font-size: 14px;
+  padding-top: 6px;
+}
+.seller-product-edit-remove {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.seller-product .product-edit,
+.seller-product .product-remove {
+  background-color: transparent;
+  border: 0;
+  margin: 0 5px;
+  font-size: 18px;
+  color: #a52828;
+  cursor: pointer;
+}
+.seller-product .product-edit::before {
+  font-family: 'Font Awesome 5 Free';
+  content: '\f044';
+}
+.seller-product .product-remove::before {
+  font-family: 'Font Awesome 5 Free';
+  content: '\f2ed';
+}
 
 /*Modify home page layouts */
 .main-page {
