@@ -4,8 +4,6 @@ function storeData() {
     localStorage.setItem("products", JSON.stringify(products));
   if (!localStorage.getItem("cart"))
     localStorage.setItem("cart", JSON.stringify(cart));
-
-  console.log("dskojfos");
 }
 
 // function to add items to the cart
