@@ -13,10 +13,6 @@ function storeItem(type, item) {
   dataArray.push(item);
   localStorage.setItem(type, JSON.stringify(dataArray));
 }
-// function to remove item
-function getItem(listType) {
-  return JSON.parse(localStorage.getItem(listType));
-}
 
 // function to remove item
 function removeItem(listType, id) {
@@ -41,4 +37,8 @@ function removeChild(parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
   }
+}
+// function to get products
+function getItem(listType) {
+  return JSON.parse(localStorage.getItem(listType));
 }
