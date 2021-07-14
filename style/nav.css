@@ -20,7 +20,7 @@ nav {
 .logo-nav {
   padding: 12px;
   font-size: 2rem;
-  user-select: none;
+  cursor: pointer;
 }
 
 .logo-nav .logo-i {
@@ -302,4 +302,28 @@ main {
 
 .list-auto-complete li:hover {
   background-color: rgb(206, 206, 206);
+}
+
+.style-list {
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.style-list.active {
+  pointer-events: none;
+  background-color: rgb(189, 189, 189);
+}
+
+.style-grid {
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.style-grid.active {
+  pointer-events: none;
+  background-color: rgb(189, 189, 189);
 }
