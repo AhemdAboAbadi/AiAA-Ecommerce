@@ -91,46 +91,45 @@ function creatHome() {
   while (main.firstChild) {
     main.removeChild(main.lastChild);
   }
-//   const cartList = creatCartList(getItem("products"));
+  //   const cartList = creatCartList(getItem("products"));
   const cartList = creatCartListAsList(getItem("products"));
 
   main.appendChild(cartList);
 }
- // add card eventlistener
- const saveButton = document.querySelector('.save-button')
- const cancelBtn = document.querySelector('.cancel-button')
- saveButton.addEventListener('click', ()=>{
-    const cardObject = createCardObject()
-    storeItem('products', cardObject)
-    addFormContainer.classList.remove('active')
-    contentHider.classList.remove('active')
-
- })
- // function to create object
-function createCardObject (){
-    const saveBtn = document.querySelector('.save-button')
-    const nameInput = document.getElementById('name')
-    const priceInput = document.getElementById('price')
-    const photoUrl = document.getElementById('photo')
-    const detailsInput = document.getElementById('details')
-    const categories = document.getElementById('categories')
-    const categoryText = categories.options[categories.selectedIndex].text
-    let cardObject = {}
-    cardObject.name = nameInput.value
-    cardObject.price = priceInput.value
-    cardObject.category = categoryText
-    cardObject.description = detailsInput.value
-    cardObject.imgUrl = photoUrl.value
-    return cardObject
-}  
- const addFormContainer = document.querySelector('.add-form-container')
- const contentHider = document.querySelector('.content-hider')
- const xBtn = document.querySelector('.add-form-container .fa-times')
- xBtn.addEventListener('click',()=>{
-     addFormContainer.classList.remove('active')
-     contentHider.classList.remove('active')
- })
- cancelBtn.addEventListener('click',()=>{
-    addFormContainer.classList.remove('active')
-    contentHider.classList.remove('active')
-})
+// add card eventlistener
+const saveButton = document.querySelector(".save-button");
+const cancelBtn = document.querySelector(".cancel-button");
+saveButton.addEventListener("click", () => {
+  const cardObject = createCardObject();
+  storeItem("products", cardObject);
+  addFormContainer.classList.remove("active");
+  contentHider.classList.remove("active");
+});
+// function to create object
+function createCardObject() {
+  const saveBtn = document.querySelector(".save-button");
+  const nameInput = document.getElementById("name");
+  const priceInput = document.getElementById("price");
+  const photoUrl = document.getElementById("photo");
+  const detailsInput = document.getElementById("details");
+  const categories = document.getElementById("categories");
+  const categoryText = categories.options[categories.selectedIndex].text;
+  let cardObject = {};
+  cardObject.name = nameInput.value;
+  cardObject.price = priceInput.value;
+  cardObject.category = categoryText;
+  cardObject.description = detailsInput.value;
+  cardObject.imgUrl = photoUrl.value;
+  return cardObject;
+}
+const addFormContainer = document.querySelector(".add-form-container");
+const contentHider = document.querySelector(".content-hider");
+const xBtn = document.querySelector(".add-form-container .fa-times");
+xBtn.addEventListener("click", () => {
+  addFormContainer.classList.remove("active");
+  contentHider.classList.remove("active");
+});
+cancelBtn.addEventListener("click", () => {
+  addFormContainer.classList.remove("active");
+  contentHider.classList.remove("active");
+});
