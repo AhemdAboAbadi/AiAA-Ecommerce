@@ -30,13 +30,13 @@ function filterTitleDom() {
 }
 
 function filterCategoryDom() {
-  let divCategory = document.createElement("div");
-  let selectCategory = document.createElement("select");
-  let selectOption0 = document.createElement("option");
-  let selectOption1 = document.createElement("option");
-  let selectOption2 = document.createElement("option");
-  let selectOption3 = document.createElement("option");
-  let selectOption4 = document.createElement("option");
+  const divCategory = document.createElement("div");
+  const selectCategory = document.createElement("select");
+  const selectOption0 = document.createElement("option");
+  const selectOption1 = document.createElement("option");
+  const selectOption2 = document.createElement("option");
+  const selectOption3 = document.createElement("option");
+  const selectOption4 = document.createElement("option");
   selectOption0.textContent = "Category";
   selectOption0.setAttribute("disabled", "");
   selectOption0.setAttribute("selected", "");
@@ -133,7 +133,7 @@ function createAddButton() {
   addProductBtn.classList = "add-product-btn";
   addProductBtn.setAttribute("id", "addProductBtn");
   addProductBtn.textContent = "Add Product";
-  addProductBtn.addEventListener("click", () => {
+  addProductBtn.addEventListener("click", function () {
     isAdd = true;
     addFormContainer.classList.add("active");
     contentHider.classList.add("active");
@@ -170,7 +170,7 @@ function sellerProductGrid(item) {
   sellerProductEditRemove.classList = "seller-product-edit-remove";
   productEdit.classList = "product-edit";
   productRemove.classList = "product-remove";
-  productEdit.addEventListener("click", (e) => {
+  productEdit.addEventListener("click", function (e) {
     isAdd = false;
     editId = e.target.parentNode.parentNode.parentNode.id;
     addFormContainer.classList.add("active");
@@ -183,7 +183,6 @@ function sellerProductGrid(item) {
     editForm[2].value = item.category;
     editForm[3].value = item.imgUrl;
     editForm[4].value = item.description;
-
   });
 
   // Append child to parents
@@ -326,7 +325,7 @@ function creatCartAsList(item) {
 function creatCartListAsList(arr) {
   const sectionContainerList = document.createElement("section");
   sectionContainerList.classList.add("container-cart");
-  arr.forEach((item) => {
+  arr.forEach(function (item) {
     const cart = creatCartAsList(item);
     sectionContainerList.appendChild(cart);
   });
@@ -356,8 +355,8 @@ function creatHome() {
   const numbersCardUser = document.querySelector(".numbers-card-user");
   let totlePrice = 0;
 
-  svgCartAdd.forEach((pk) => {
-    pk.addEventListener("click", () => {
+  svgCartAdd.forEach(function (pk) {
+    pk.addEventListener("click", function () {
       const cardNumId = pk.getAttribute("data-numberCard");
       countCart++;
       numbersCardUser.textContent = countCart;
@@ -366,7 +365,7 @@ function creatHome() {
 
       let oldData = JSON.parse(localStorage.getItem("cart"));
 
-      products.forEach((item) => {
+      products.forEach(function (item) {
         if (item.id == cardNumId) {
           totlePrice += item.price;
           oldData.push(item);
@@ -392,7 +391,7 @@ function getNumCart() {
   allTotlePrices.textContent = dataPrice;
 }
 
-cartNav.addEventListener("click", () => {
+cartNav.addEventListener("click", function () {
   sliderContainer.remove();
   const dataCart = JSON.parse(localStorage.getItem("cart"));
 
@@ -428,7 +427,7 @@ function createSellerPage() {
 // add card eventlistener
 const saveButton = document.querySelector(".save-button");
 const cancelBtn = document.querySelector(".cancel-button");
-saveButton.addEventListener("click", () => {
+saveButton.addEventListener("click", function () {
   if (isAdd) {
     const cardObject = createCardObject();
     document.body.style.overflow = "auto";
@@ -461,12 +460,12 @@ function createCardObject(id) {
 const addFormContainer = document.querySelector(".add-form-container");
 const contentHider = document.querySelector(".content-hider");
 const xBtn = document.querySelector(".add-form-container .fa-times");
-xBtn.addEventListener("click", () => {
+xBtn.addEventListener("click", function () {
   addFormContainer.classList.remove("active");
   contentHider.classList.remove("active");
   document.body.style.overflow = "auto";
 });
-cancelBtn.addEventListener("click", () => {
+cancelBtn.addEventListener("click", function () {
   addFormContainer.classList.remove("active");
   contentHider.classList.remove("active");
   document.body.style.overflow = "auto";

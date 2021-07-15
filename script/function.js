@@ -45,7 +45,7 @@ function getItem(listType) {
 
 // Search Function
 function cardFilter(array, inputText) {
-  return array.filter((item) => {
+  return array.filter(function (item) {
     return (
       item.name.toLowerCase().includes(inputText) ||
       item.description.toLowerCase().includes(inputText)
