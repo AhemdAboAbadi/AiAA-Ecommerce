@@ -57,7 +57,7 @@ nav {
   width: 430px;
   height: 40px;
   display: flex;
-  border-radius: 5px;
+  border-radius: 20px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
 }
 
@@ -67,7 +67,7 @@ nav {
   border: none;
   padding: 8px;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 .svg-search-nav {
@@ -85,6 +85,7 @@ nav {
   width: 25px;
   height: 25px;
   fill: var(--primary-color);
+  border-radius: 20px;
 }
 
 /* user cart , profile */
@@ -201,6 +202,13 @@ nav {
     font-size: 0.7rem;
   }
 
+  .btn-buyer-nav {
+    display: none;
+  }
+
+  .nav-option-user {
+    width: 120px;
+  }
   .nav-logo-content {
     width: 170px;
   }

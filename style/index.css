@@ -135,11 +135,6 @@ main {
   transition: all 0.4s ease-in-out;
 }
 
-.main-page-list img:hover,
-.main-container img:hover {
-  transform: scale(1.02);
-}
-
 .main-h4 {
   padding: 0.5rem 0;
 }
@@ -214,15 +209,11 @@ main {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    /* align-items: flex-start; */
-    /* width: 70%; */
-    /* margin: 0 auto; */
   }
 }
 @media (max-width: 800px) {
   .footer-container {
     flex-direction: column;
-    padding: 5rem 5rem 4rem 5rem;
   }
   .footer-div-social {
     padding-top: 5rem;
@@ -235,6 +226,14 @@ main {
   .main-container {
     width: 100%;
     margin: 2rem 2rem 5rem 2rem;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
@@ -252,30 +251,36 @@ main {
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   width: 70%;
   margin: 0 auto;
 }
 
 .footer-paragraph {
   padding: 1rem 0 2rem 0;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--primary-color);
   cursor: pointer;
+  font-size: 20px;
+  width: 400px;
 }
 .footer-social {
-  padding-right: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+  width: 170px;
 }
-.font-awesome {
-  padding-right: 1.5rem;
-}
+
 .footer-paragraph:hover {
-  font-size: 23px;
   transition: 1s;
   color: antiquewhite;
+  transform: scale(1.1);
 }
 .footer-social:hover {
   color: rgb(221, 0, 0);
+  transition: 1s;
+  color: antiquewhite;
+  transform: scale(1.1);
 }
+
 /* end footer style  */
 .main-container {
   position: relative;

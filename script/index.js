@@ -4,7 +4,7 @@ creatHome();
 let viewDataArray = getItem("products");
 
 //for auto complete user
-searchValue.addEventListener("keyup", () => {
+searchValue.addEventListener("keyup", function () {
   removeChild(listAutoComplete);
   const wordAuto = searchValue.value.toLowerCase();
 
@@ -28,7 +28,7 @@ searchValue.addEventListener("keyup", () => {
   getSelectValue();
 });
 // for search user
-searchStart.addEventListener("click", () => {
+searchStart.addEventListener("click", function () {
   sliderContainer.remove();
   // let cardForSearched = [];
   containerPopAuto.classList.remove("active");
@@ -37,15 +37,7 @@ searchStart.addEventListener("click", () => {
   let arr = getItem("products");
 
   searchValue.value = "";
-  const cardForSearched = cardFilter(arr, wrdSearched );
-  // arr.forEach((item) => {
-  //   if (
-  //     item.name.toLowerCase().includes(wrdSearched) ||
-  //     item.description.toLowerCase().includes(wrdSearched)
-  //   ) {
-  //     cardForSearched.push(item);
-  //   }
-  // });
+  const cardForSearched = cardFilter(arr, wrdSearched);
 
   const main = document.querySelector("main");
   removeChild(main);
@@ -62,7 +54,7 @@ function callCreateEventsFilter() {
   const styleList = document.querySelector(".style-list");
   const main = document.querySelector("main");
 
-  styleList.addEventListener("click", () => {
+  styleList.addEventListener("click", function () {
     isList = true;
     const mainPage = document.querySelector(".main-page");
     main.removeChild(mainPage);
@@ -72,7 +64,7 @@ function callCreateEventsFilter() {
     styleGrid.classList.remove("active");
   });
 
-  styleGrid.addEventListener("click", () => {
+  styleGrid.addEventListener("click", function () {
     isList = false;
     const containerCart = document.querySelector(".container-cart");
     main.removeChild(containerCart);
@@ -89,63 +81,67 @@ function callCreateEventsFilter() {
 callCreateEventsFilter();
 
 const logoNav = document.querySelector(".logo-nav");
-logoNav.addEventListener("click", () => {
+logoNav.addEventListener("click", function () {
   localStorage.clear();
   location.reload();
 });
 
 function sortFilterPrice() {
-  document.querySelector(".select-price").addEventListener("change", (e) => {
-    const minMax = e.target.value;
-    const byDate = viewDataArray.slice(0);
-    if (minMax == "min") {
-      byDate.sort(function (a, b) {
-        return a.price - b.price;
-      });
-    } else {
-      byDate.sort(function (a, b) {
-        return b.price - a.price;
-      });
-    }
+  document
+    .querySelector(".select-price")
+    .addEventListener("change", function (e) {
+      const minMax = e.target.value;
+      const byDate = viewDataArray.slice(0);
+      if (minMax == "min") {
+        byDate.sort(function (a, b) {
+          return a.price - b.price;
+        });
+      } else {
+        byDate.sort(function (a, b) {
+          return b.price - a.price;
+        });
+      }
 
-    viewDataArray = byDate;
-    const main = document.querySelector("main");
-    removeChild(main);
-    createFilterSection();
-    callCreateEventsFilter();
-    let cartList;
-    if (isList) {
-      cartList = creatCartListAsList(byDate);
-    } else {
-      cartList = creatCartList(byDate);
-    }
+      viewDataArray = byDate;
+      const main = document.querySelector("main");
+      removeChild(main);
+      createFilterSection();
+      callCreateEventsFilter();
+      let cartList;
+      if (isList) {
+        cartList = creatCartListAsList(byDate);
+      } else {
+        cartList = creatCartList(byDate);
+      }
 
-    main.appendChild(cartList);
-  });
+      main.appendChild(cartList);
+    });
 }
 
 function sortFilterCategory() {
-  document.querySelector(".select-category").addEventListener("change", (e) => {
-    let categorySelect = e.target.value.toLowerCase();
-    let arraySortCategory = [];
-    for (let q = 0; q < products.length; q++) {
-      if (products[q].category.toLowerCase() == categorySelect) {
-        arraySortCategory.push(products[q]);
+  document
+    .querySelector(".select-category")
+    .addEventListener("change", function (e) {
+      let categorySelect = e.target.value.toLowerCase();
+      let arraySortCategory = [];
+      for (let q = 0; q < products.length; q++) {
+        if (products[q].category.toLowerCase() == categorySelect) {
+          arraySortCategory.push(products[q]);
+        }
       }
-    }
-    viewDataArray = arraySortCategory;
-    const main = document.querySelector("main");
-    removeChild(main);
-    createFilterSection();
-    callCreateEventsFilter();
+      viewDataArray = arraySortCategory;
+      const main = document.querySelector("main");
+      removeChild(main);
+      createFilterSection();
+      callCreateEventsFilter();
 
-    let cartList;
-    if (isList) {
-      cartList = creatCartListAsList(arraySortCategory);
-    } else {
-      cartList = creatCartList(arraySortCategory);
-    }
+      let cartList;
+      if (isList) {
+        cartList = creatCartListAsList(arraySortCategory);
+      } else {
+        cartList = creatCartList(arraySortCategory);
+      }
 
-    main.appendChild(cartList);
-  });
+      main.appendChild(cartList);
+    });
 }
