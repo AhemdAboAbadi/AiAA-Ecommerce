@@ -1,10 +1,15 @@
 # AiAA-Ecommerce
 
-Live link >> https://gsg-g10.github.io/AiAA-Ecommerce/
-Figma link >> https://www.figma.com/file/xTx7xK8G4ThRWRQSa8CKrp/Ecommerce-APP
+### [Live link](https://gsg-g10.github.io/AiAA-Ecommerce/)
+### [Figma Design](https://www.figma.com/file/xTx7xK8G4ThRWRQSa8CKrp/Ecommerce-APP)
+
+___
 
 ## The project name:
 AiAA Exommerce
+
+## Team Leader
+* Osama Younis
 
 ## Team Members
 * Ahmad Omar
